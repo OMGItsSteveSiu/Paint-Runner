@@ -84,6 +84,7 @@ else
     global.bound = mouse_y;
 }
 move_towards_point(400,global.brushChaseLoc,abs(self.y-global.bound)/3);
+image_angle = point_direction(self.x, self.y, self.x+100, global.bound-30);
 with(instance_create(self.x,self.y,lineSeg_obj))
 {
     image_xscale = (abs(global.lastMousePos-global.bound)/15)+2;
