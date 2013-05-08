@@ -6,19 +6,30 @@
   <NewExtensions/>
   <sounds name="sound"/>
   <sprites name="sprites">
-    <sprite>sprites\player_spr</sprite>
-    <sprite>sprites\lineSeg_spr</sprite>
     <sprite>sprites\brush_spr</sprite>
+    <sprite>sprites\lineSeg_spr</sprite>
+    <sprite>sprites\play_spr</sprite>
+    <sprite>sprites\player_spr</sprite>
+    <sprite>sprites\settings_spr</sprite>
+    <sprite>sprites\backButton_spr</sprite>
   </sprites>
   <backgrounds name="background"/>
   <paths name="paths"/>
   <objects name="objects">
-    <object>objects\player_obj</object>
-    <object>objects\lineSeg_obj</object>
     <object>objects\brush_obj</object>
+    <object>objects\lineSeg_obj</object>
+    <object>objects\mainMenuSystem_obj</object>
+    <object>objects\play_obj</object>
+    <object>objects\player_obj</object>
+    <object>objects\settings_obj</object>
+    <object>objects\system_obj</object>
+    <object>objects\settingsSystem_obj</object>
+    <object>objects\backButton_obj</object>
   </objects>
   <rooms name="rooms">
-    <room>rooms\room0</room>
+    <room>rooms\mainMenu0</room>
+    <room>rooms\settingsMenu1</room>
+    <room>rooms\freePlay2</room>
   </rooms>
   <help>
     <rtf>help.rtf</rtf>
