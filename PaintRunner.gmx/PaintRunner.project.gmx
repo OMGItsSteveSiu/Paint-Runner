@@ -12,9 +12,13 @@
     <sprite>sprites\player_spr</sprite>
     <sprite>sprites\settings_spr</sprite>
     <sprite>sprites\backButton_spr</sprite>
+    <sprite>sprites\coin_spr</sprite>
   </sprites>
   <backgrounds name="background"/>
   <paths name="paths"/>
+  <scripts name="scripts">
+    <script>scripts\save_scr.gml</script>
+  </scripts>
   <objects name="objects">
     <object>objects\brush_obj</object>
     <object>objects\lineSeg_obj</object>
@@ -25,11 +29,12 @@
     <object>objects\system_obj</object>
     <object>objects\settingsSystem_obj</object>
     <object>objects\backButton_obj</object>
+    <object>objects\coin_obj</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\mainMenu0</room>
     <room>rooms\settingsMenu1</room>
-    <room>rooms\freePlay2</room>
+    <room>rooms\game2</room>
   </rooms>
   <help>
     <rtf>help.rtf</rtf>

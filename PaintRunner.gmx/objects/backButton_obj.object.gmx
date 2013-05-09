@@ -25,7 +25,8 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>room_goto(mainMenu0);
+            <string>script_execute(save_scr);
+room_goto(mainMenu0);
 </string>
           </argument>
         </arguments>

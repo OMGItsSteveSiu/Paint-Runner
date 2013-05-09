@@ -88,6 +88,20 @@ image_angle = point_direction(self.x, self.y, self.x+100, global.bound-30);
 with(instance_create(self.x,self.y,lineSeg_obj))
 {
     image_xscale = (abs(global.lastMousePos-global.bound)/15)+2;
+    if(global.segMoveSpeed &lt;= -20)
+    {
+        with(instance_create(self.x-10,self.y,lineSeg_obj))
+        {
+            image_xscale = (abs(global.lastMousePos-global.bound)/15)+2;
+        }
+        if(global.segMoveSpeed = -30)
+        {
+            with(instance_create(self.x-20,self.y,lineSeg_obj))
+            {
+                image_xscale = (abs(global.lastMousePos-global.bound)/15)+2;
+            }
+        }
+    }
 }
 
 </string>

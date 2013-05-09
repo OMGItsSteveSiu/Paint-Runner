@@ -63,7 +63,9 @@ hspeed = -10;
             <string>if(abs(global.targetPos-self.x) &lt;= 9)
 {
     global.targY = self.y;
+    global.targAngle = self.image_angle;
 }
+hspeed = global.segMoveSpeed;
 if(self.x &lt;= -32)
 {
     instance_destroy();

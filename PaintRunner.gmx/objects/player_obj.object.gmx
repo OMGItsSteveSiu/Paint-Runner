@@ -27,6 +27,7 @@
             <kind>1</kind>
             <string>self.x = global.targetPos;
 self.y = global.targY;
+self.image_angle = global.targAngle;
 
 if(mouse_check_button_pressed(mb_left))
 {

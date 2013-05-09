@@ -28,11 +28,69 @@
             <string>global.bound = 240;
 global.targetPos = 128;
 global.targY = -1;
+global.targAngle = 0;
 global.brushChaseLoc = -1;
+global.segMoveSpeed = -10;
 
-second=current_second;
-minute=current_minute;
-hour=current_hour;
+baseTime = current_time;
+rawDistTraveled = 0;
+rawDistCounter = 0;
+distTraveled = 0;
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>301</id>
+        <kind>0</kind>
+        <userelative>-1</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>1</exetype>
+        <functionname>action_set_alarm</functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>0</kind>
+            <string>irandom_range(0,4)*(300/abs(global.segMoveSpeed))+(300/abs(global.segMoveSpeed))</string>
+          </argument>
+          <argument>
+            <kind>4</kind>
+            <string>0</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>spawnPos = irandom_range(32,448);
+{
+    quantity = irandom_range(1,10);
+    for(i = 0; i &lt; quantity; i++)
+    {
+        instance_create(800+i*20,spawnPos,coin_obj);
+    }
+}
+alarm[0] = irandom_range(0,4)*(300/abs(global.segMoveSpeed))+(300/abs(global.segMoveSpeed));
 </string>
           </argument>
         </arguments>
@@ -93,8 +151,31 @@ hour=current_hour;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if(keyboard_check_released(vk_backspace))
+            <string>rawDistTraveled += abs(global.segMoveSpeed);
+rawDistCounter += abs(global.segMoveSpeed);
+distTraveled = (rawDistTraveled - (rawDistTraveled mod 100))/100;
+
+if(survivalTime &gt; global.longestTime)
 {
+    global.longestTime = survivalTime;
+}
+
+if(distTraveled &gt; global.farthestDistance)
+{
+    global.farthestDistance = distTraveled;
+}
+
+if(rawDistCounter &gt;= 10000)
+{
+    rawDistCounter -= 10000
+    if(global.segMoveSpeed &gt; -30)
+    {
+        global.segMoveSpeed--;
+    }
+}
+if(keyboard_check_released(vk_backspace))
+{
+    script_execute(save_scr);
     room_goto(mainMenu0);
 }
 </string>
@@ -119,7 +200,11 @@ hour=current_hour;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>draw_text(5,5,'time: '+string(hour)+':'+string(minute)+':'+string(second))
+            <string>survivalTime = ((current_time-baseTime)- ((current_time-baseTime) mod 1000))/1000;
+draw_text(5,5,'Time Survived: '+string(survivalTime));
+draw_text(5,25,'Distance Traveled: '+string(distTraveled));
+draw_text(5,45,'Raw Distance: '+ string(rawDistTraveled));
+draw_text(5,65,'segMoveSpeed: '+string(global.segMoveSpeed));
 </string>
           </argument>
         </arguments>
