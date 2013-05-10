@@ -89,15 +89,107 @@ if(keyboard_check_pressed(ord('R')))
             <string>ini_open("paintRunner.ini");
 global.moniez = ini_read_real("Vars", "Moniez", 0);
 global.farthestDistance = ini_read_real("Vars", "Dist", 0);
-global.longestTime = ini_read_real("Vars", "Time", 0);
 
 global.lineSegAvatar = ini_read_real("Avatars", "LineSeg", lineSegGreen_spr);
 global.runnerAvatar = ini_read_real("Avatars", "Runner", playerDefault_spr);
 global.brushAvatar = ini_read_real("Avatars", "Brush", brushDefault_spr);
 global.coinAvatar = ini_read_real("Avatars", "Coin", coinDefault_spr);
+global.dayEnemyAvatar = ini_read_real("Avatars", "DayEnemy", dayEnemyDefault_spr);
+global.nightEnemyAvatar = ini_read_real("Avatars", "NightEnemy", nightEnemyDefault_spr);
 
-global.hasLineSegBlue = ini_read_real("Inventory", "hasLineSegBlue",0);
-global.costLineSegBlue = ini_read_real("Cost", "costLineSegBlue",10000);
+//Line Segment Inventory Items
+global.hasLineSegDefault = ini_read_real("Inventory","hasLineSegDefault",1);
+global.costLineSegDefault = ini_read_real("Cost","costLineSegDefault",0);
+
+//Line Segment Inventory Array Init
+global.lineSegInventory[0,0] = lineSegGreen_spr;
+global.lineSegInventory[0,1] = global.hasLineSegDefault;
+global.lineSegInventory[0,2] = global.costLineSegDefault;
+
+global.lineSegPreviewTracker = -1;
+
+for(i = 0; i &lt; 1; i++)
+{
+    if(global.lineSegInventory[i,0] == global.lineSegAvatar)
+    {
+        global.lineSegPreviewTracker = i;
+    }
+}
+
+//Runner Inventory Items
+global.hasRunnerDefault = ini_read_real("Inventory","hasRunnerDefault",1);
+global.costRunnerDefault = ini_read_real("Cost","costRunnerDefault",0);
+
+//Runner Inventory Array Init
+global.runnerInventory[0,0] = playerDefault_spr;
+global.runnerInventory[0,1] = global.hasRunnerDefault;
+global.runnerInventory[0,2] = global.costRunnerDefault;
+
+global.runnerPreviewTracker = -1;
+
+for(i = 0; i &lt; 1; i++)
+{
+    if(global.runnerInventory[i,0] == global.runnerAvatar)
+    {
+        global.runnerPreviewTracker = i;
+    }
+}
+
+//Brush Inventory Items
+global.hasBrushDefault = ini_read_real("Inventory","hasBrushDefault",1);
+global.costBrushDefault = ini_read_real("Cost","costBrushDefault",0);
+
+//Brush Inventory Array Init
+global.brushInventory[0,0] = brushDefault_spr;
+global.brushInventory[0,1] = global.hasBrushDefault;
+global.brushInventory[0,2] = global.costBrushDefault;
+
+global.brushPreviewTracker = -1;
+
+for(i = 0; i &lt; 1; i++)
+{
+    if(global.brushInventory[i,0] == global.brushAvatar)
+    {
+        global.brushPreviewTracker = i;
+    }
+}
+
+//Coin Inventory Items
+global.hasCoinDefault = ini_read_real("Inventory", "hasCoinDefault",1);
+global.costCoinDefault = ini_read_real("Cost", "costCoinDefault",0);
+
+//Coin Inventory Array Init
+global.coinInventory[0,0] = coinDefault_spr;
+global.coinInventory[0,1] = global.hasCoinDefault;
+global.coinInventory[0,2] = global.costCoinDefault;
+
+global.coinPreviewTracker = -1;
+
+for(i = 0; i &lt; 1; i++)
+{
+    if(global.coinInventory[i,0] == global.coinAvatar)
+    {
+        global.coinPreviewTracker = i;
+    }
+}
+
+//Day Enemy Inventory Items
+global.hasDayEnemyDefault = ini_read_real("Inventory", "hasDayEnemyDefault",1);
+global.costDayEnemyDefault = ini_read_real("Cost", "costDayEnemyDefault",0);
+
+//Day Enemy Inventory Array Init
+global.dayEnemyInventory[0,0] = dayEnemyDefault_spr;
+global.dayEnemyInventory[0,1] = global.hasDayEnemyDefault;
+global.dayEnemyInventory[0,2] = global.costDayEnemyDefault;
+
+//Night Enemy Inventory Items
+global.hasNightEnemyDefault = ini_read_real("Inventory", "hasNightEnemyDefault",1);
+global.costNightEnemyDefault = ini_read_real("Cost", "costNightEnemyDefault",0);
+
+//Night Enemy Inventory Array Init
+global.nightEnemyInventory[0,0] = nightEnemyDefault_spr;
+global.nightEnemyInventory[0,1] = global.hasNightEnemyDefault;
+global.nightEnemyInventory[0,2] = global.costNightEnemyDefault;
 ini_close();
 </string>
           </argument>
@@ -125,8 +217,6 @@ ini_close();
 draw_text(50,70, global.moniez);
 draw_text(50,90,"FarthestDistance: ");
 draw_text(50,110, global.farthestDistance);
-draw_text(50,130,"LongestTime: ");
-draw_text(50,150, global.longestTime);
 </string>
           </argument>
         </arguments>

@@ -1,3 +1,19 @@
+with(coinPreview_obj)
+{
+    instance_destroy();
+}
+with(brushPreview_obj)
+{
+    instance_destroy();
+}
+with(lineSegPreview_obj)
+{
+    instance_destroy();
+}
+with(runnerPreview_obj)
+{
+    instance_destroy();
+}
 with(choiceArrow_obj)
 {
     instance_destroy();

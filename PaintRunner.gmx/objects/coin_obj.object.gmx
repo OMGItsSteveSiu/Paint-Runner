@@ -49,11 +49,7 @@ hspeed=global.segMoveSpeed;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if(self.x &lt;= -32)
-{
-    instance_destroy();
-}
-hspeed=global.segMoveSpeed;
+            <string>script_execute(projStep_scr);
 </string>
           </argument>
         </arguments>

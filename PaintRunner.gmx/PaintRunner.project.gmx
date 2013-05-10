@@ -6,58 +6,66 @@
   <NewExtensions/>
   <sounds name="sound"/>
   <sprites name="sprites">
+    <sprite>sprites\backButton_spr</sprite>
     <sprite>sprites\brushDefault_spr</sprite>
-    <sprite>sprites\lineSegGreen_spr</sprite>
+    <sprite>sprites\choiceArrow_spr</sprite>
+    <sprite>sprites\coinBronze_spr</sprite>
+    <sprite>sprites\coinDefault_spr</sprite>
+    <sprite>sprites\dayEnemyDefault_spr</sprite>
+    <sprite>sprites\eight_spr</sprite>
+    <sprite>sprites\eleven_spr</sprite>
+    <sprite>sprites\five_spr</sprite>
+    <sprite>sprites\four_spr</sprite>
     <sprite>sprites\lineSegBlue_spr</sprite>
+    <sprite>sprites\lineSegGreen_spr</sprite>
+    <sprite>sprites\menu_spr</sprite>
+    <sprite>sprites\menuBox_spr</sprite>
+    <sprite>sprites\nightEnemyDefault_spr</sprite>
+    <sprite>sprites\nine_spr</sprite>
+    <sprite>sprites\one_spr</sprite>
     <sprite>sprites\play_spr</sprite>
     <sprite>sprites\playerDefault_spr</sprite>
-    <sprite>sprites\menu_spr</sprite>
-    <sprite>sprites\backButton_spr</sprite>
     <sprite>sprites\reset_spr</sprite>
-    <sprite>sprites\coinDefault_spr</sprite>
-    <sprite>sprites\zero_spr</sprite>
-    <sprite>sprites\one_spr</sprite>
-    <sprite>sprites\two_spr</sprite>
-    <sprite>sprites\three_spr</sprite>
-    <sprite>sprites\four_spr</sprite>
-    <sprite>sprites\five_spr</sprite>
-    <sprite>sprites\six_spr</sprite>
     <sprite>sprites\seven_spr</sprite>
-    <sprite>sprites\eight_spr</sprite>
-    <sprite>sprites\nine_spr</sprite>
-    <sprite>sprites\ten_spr</sprite>
-    <sprite>sprites\eleven_spr</sprite>
-    <sprite>sprites\coinBronze_spr</sprite>
     <sprite>sprites\shop_spr</sprite>
-    <sprite>sprites\menuBox_spr</sprite>
-    <sprite>sprites\choiceArrow_spr</sprite>
+    <sprite>sprites\six_spr</sprite>
+    <sprite>sprites\ten_spr</sprite>
+    <sprite>sprites\three_spr</sprite>
+    <sprite>sprites\two_spr</sprite>
+    <sprite>sprites\zero_spr</sprite>
   </sprites>
   <backgrounds name="background"/>
   <paths name="paths"/>
   <scripts name="scripts">
-    <script>scripts\save_scr.gml</script>
-    <script>scripts\setBg.gml</script>
+    <script>scripts\cleanShop_scr.gml</script>
     <script>scripts\modAngle_scr.gml</script>
     <script>scripts\modScale_scr.gml</script>
-    <script>scripts\cleanShop_scr.gml</script>
+    <script>scripts\projStep_scr.gml</script>
+    <script>scripts\save_scr.gml</script>
+    <script>scripts\setBg.gml</script>
   </scripts>
   <objects name="objects">
+    <object>objects\backButton_obj</object>
+    <object>objects\background_obj</object>
+    <object>objects\backgroundHandler_obj</object>
     <object>objects\brush_obj</object>
+    <object>objects\choiceArrow_obj</object>
+    <object>objects\coin_obj</object>
+    <object>objects\enemy_obj</object>
     <object>objects\lineSeg_obj</object>
+    <object>objects\lineSegPreview_obj</object>
     <object>objects\mainMenuSystem_obj</object>
+    <object>objects\menuBox_obj</object>
+    <object>objects\menuSystem_obj</object>
     <object>objects\play_obj</object>
     <object>objects\player_obj</object>
-    <object>objects\settings_obj</object>
-    <object>objects\system_obj</object>
-    <object>objects\menuSystem_obj</object>
-    <object>objects\backButton_obj</object>
-    <object>objects\coin_obj</object>
     <object>objects\reset_obj</object>
-    <object>objects\backgroundHandler_obj</object>
-    <object>objects\background_obj</object>
+    <object>objects\runnerPreview_obj</object>
+    <object>objects\brushPreview_obj</object>
+    <object>objects\coinPreview_obj</object>
+    <object>objects\settings_obj</object>
     <object>objects\shop_obj</object>
-    <object>objects\menuBox_obj</object>
-    <object>objects\choiceArrow_obj</object>
+    <object>objects\system_obj</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\mainMenu0</room>

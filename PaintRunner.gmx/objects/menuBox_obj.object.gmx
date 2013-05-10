@@ -34,6 +34,10 @@ for(i = 0; i &lt; 6; i++)
     arrowGen1.target = i;
     arrowGen2.target = i;
 }
+instance_create(self.x+40,self.y+146,lineSegPreview_obj);
+instance_create(self.x+162,self.y+162,runnerPreview_obj);
+instance_create(self.x+224,self.y+116,brushPreview_obj);
+instance_create(self.x+344,self.y+138,coinPreview_obj);
 </string>
           </argument>
         </arguments>

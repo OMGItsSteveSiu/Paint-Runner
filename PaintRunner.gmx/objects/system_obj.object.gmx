@@ -35,7 +35,6 @@ global.targAngle = 0;
 global.brushChaseLoc = -1;
 global.segMoveSpeed = -10;
 
-baseTime = current_time;
 rawDistTraveled = 0;
 rawDistCounter = 0;
 distTraveled = 0;
@@ -66,6 +65,55 @@ script_execute(setBg);
           <argument>
             <kind>4</kind>
             <string>0</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>301</id>
+        <kind>0</kind>
+        <userelative>-1</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>1</exetype>
+        <functionname>action_set_alarm</functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>0</kind>
+            <string>irandom_range(0,4)*(300/abs(global.segMoveSpeed))+(300/abs(global.segMoveSpeed))</string>
+          </argument>
+          <argument>
+            <kind>4</kind>
+            <string>1</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="1">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>spawnPos = irandom_range(32,448);
+instance_create(800,spawnPos,enemy_obj);
+alarm[1] = irandom_range(0,4)*(300/abs(global.segMoveSpeed))+(100/abs(global.segMoveSpeed));
+</string>
           </argument>
         </arguments>
       </action>
@@ -160,11 +208,6 @@ hour=current_hour;
 rawDistCounter += abs(global.segMoveSpeed);
 distTraveled = (rawDistTraveled - (rawDistTraveled mod 100))/100;
 
-if(survivalTime &gt; global.longestTime)
-{
-    global.longestTime = survivalTime;
-}
-
 if(distTraveled &gt; global.farthestDistance)
 {
     global.farthestDistance = distTraveled;
@@ -206,9 +249,7 @@ if(keyboard_check_released(vk_backspace))
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>survivalTime = ((current_time-baseTime)- ((current_time-baseTime) mod 1000))/1000;
-draw_text(550,5,'Time Survived: '+string(survivalTime));
-draw_text(550,25,'Distance Traveled: '+string(distTraveled));
+            <string>draw_text(550,25,'Distance Traveled: '+string(distTraveled));
 draw_text(550,45,'Time: '+string(current_hour)+':'+string(current_minute)+':'+string(current_second));
 </string>
           </argument>
