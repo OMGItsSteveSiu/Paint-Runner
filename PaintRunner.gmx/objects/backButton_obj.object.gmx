@@ -26,7 +26,14 @@
           <argument>
             <kind>1</kind>
             <string>script_execute(save_scr);
-room_goto(mainMenu0);
+if(instance_exists(menuBox_obj))
+{
+    script_execute(cleanShop_scr);
+}
+else
+{
+    room_goto(mainMenu0);
+}
 </string>
           </argument>
         </arguments>

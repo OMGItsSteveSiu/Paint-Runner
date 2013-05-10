@@ -63,11 +63,7 @@ if(keyboard_check_pressed(ord('R')))
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>ini_open("paintRunner.ini");
-ini_write_real("Vars","Moniez",global.moniez);
-ini_write_real("Vars","Dist",global.farthestDistance);
-ini_write_real("Vars","Time",global.longestTime);
-ini_close();
+            <string>script_execute(save_scr);
 </string>
           </argument>
         </arguments>
@@ -94,6 +90,14 @@ ini_close();
 global.moniez = ini_read_real("Vars", "Moniez", 0);
 global.farthestDistance = ini_read_real("Vars", "Dist", 0);
 global.longestTime = ini_read_real("Vars", "Time", 0);
+
+global.lineSegAvatar = ini_read_real("Avatars", "LineSeg", lineSegGreen_spr);
+global.runnerAvatar = ini_read_real("Avatars", "Runner", playerDefault_spr);
+global.brushAvatar = ini_read_real("Avatars", "Brush", brushDefault_spr);
+global.coinAvatar = ini_read_real("Avatars", "Coin", coinDefault_spr);
+
+global.hasLineSegBlue = ini_read_real("Inventory", "hasLineSegBlue",0);
+global.costLineSegBlue = ini_read_real("Cost", "costLineSegBlue",10000);
 ini_close();
 </string>
           </argument>

@@ -25,7 +25,10 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>global.bound = 240;
+            <string>global.currentBg = zero_spr;
+global.nextBg = one_spr;
+
+global.bound = 240;
 global.targetPos = 128;
 global.targY = -1;
 global.targAngle = 0;
@@ -36,6 +39,8 @@ baseTime = current_time;
 rawDistTraveled = 0;
 rawDistCounter = 0;
 distTraveled = 0;
+
+script_execute(setBg);
 </string>
           </argument>
         </arguments>
@@ -173,6 +178,7 @@ if(rawDistCounter &gt;= 10000)
         global.segMoveSpeed--;
     }
 }
+
 if(keyboard_check_released(vk_backspace))
 {
     script_execute(save_scr);
@@ -201,10 +207,9 @@ if(keyboard_check_released(vk_backspace))
           <argument>
             <kind>1</kind>
             <string>survivalTime = ((current_time-baseTime)- ((current_time-baseTime) mod 1000))/1000;
-draw_text(5,5,'Time Survived: '+string(survivalTime));
-draw_text(5,25,'Distance Traveled: '+string(distTraveled));
-draw_text(5,45,'Raw Distance: '+ string(rawDistTraveled));
-draw_text(5,65,'segMoveSpeed: '+string(global.segMoveSpeed));
+draw_text(550,5,'Time Survived: '+string(survivalTime));
+draw_text(550,25,'Distance Traveled: '+string(distTraveled));
+draw_text(550,45,'Time: '+string(current_hour)+':'+string(current_minute)+':'+string(current_second));
 </string>
           </argument>
         </arguments>
