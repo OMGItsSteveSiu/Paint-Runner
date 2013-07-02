@@ -33,6 +33,7 @@
     <sprite>sprites\three_spr</sprite>
     <sprite>sprites\two_spr</sprite>
     <sprite>sprites\zero_spr</sprite>
+    <sprite>sprites\SunMoon_spr</sprite>
   </sprites>
   <backgrounds name="background"/>
   <paths name="paths"/>
@@ -66,6 +67,7 @@
     <object>objects\settings_obj</object>
     <object>objects\shop_obj</object>
     <object>objects\system_obj</object>
+    <object>objects\SunMoon_obj</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\mainMenu0</room>
